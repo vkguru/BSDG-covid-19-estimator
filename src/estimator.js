@@ -157,9 +157,16 @@ const monthlyInfections = (data) => {
 };
 
 const covid19ImpactEstimator = (data) => {
-  dailyInfections(data);
-  weeklyInfections(data);
-  monthlyInfections(data);
+  if (periodType === 'days') {
+    dailyInfections(data);
+  } else if (periodType === 'weeks') {
+    weeklyInfections(data);
+  } else (periodType === 'months') {
+    monthlyInfections(data);
+  }
+  // dailyInfections(data);
+  // weeklyInfections(data);
+  // monthlyInfections(data);
 
   return covid19ImpactEstimator(data);
 };
