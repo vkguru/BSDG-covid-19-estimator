@@ -5,27 +5,27 @@ const dailyInfections = (data) => {
   const severelyInfected = data.reportedCases * 50;
 
   // currently infected
-  const infectionsByRequestedTime = currentlyInfected * (2 ** (data.timeToElapse / 3));
-  const infectionsByRequestedTimeServerity = severelyInfected * (2 ** (data.timeToElapse / 3));
+  const infectionsByRequestedTime = Math.trun(currentlyInfected * (2 ** (data.timeToElapse / 3)));
+  const infectionsByRequestedTimeServerity = Math.trun(severelyInfected * (2 ** (data.timeToElapse / 3)));
 
   // Servere positive cases
-  const severeCasesByRequestedTime = (15 / 100) * infectionsByRequestedTime;
-  const severeCasesByRequestedTimeSeverity = (15 / 100) * infectionsByRequestedTime;
+  const severeCasesByRequestedTime = Math.trun((15 / 100) * infectionsByRequestedTime);
+  const severeCasesByRequestedTimeSeverity = Math.trun((15 / 100) * infectionsByRequestedTime);
 
   // Number of available beds
-  const hospitalBedsAvailable = (35 / 100) * data.totalHospitalBeds;
+  const hospitalBedsAvailable = Math.trun((35 / 100) * data.totalHospitalBeds);
 
   // Cases requiring ICU
-  const casesForICUByRequestedTime = (5 / 100) * infectionsByRequestedTime;
-  const casesForICUByRequestedTimeSeverity = (5 / 100) * infectionsByRequestedTimeServerity;
+  const casesForICUByRequestedTime = Math.trun((5 / 100) * infectionsByRequestedTime);
+  const casesForICUByRequestedTimeSeverity = Math.trun((5 / 100) * infectionsByRequestedTimeServerity);
 
   // Cases requiring Ventilators
-  const casesForVentilatorsByRequestedTime = (2 / 100) * infectionsByRequestedTime;
-  const casesForVentilatorsByRequestedTimeSeverity = (2 / 100) * infectionsByRequestedTimeServerity;
+  const casesForVentilatorsByRequestedTime = Math.trun((2 / 100) * infectionsByRequestedTime);
+  const casesForVentilatorsByRequestedTimeSeverity = Math.trun((2 / 100) * infectionsByRequestedTimeServerity);
 
   // Money lose in the region
-  const dollarsInFlight = (infectionsByRequestedTime * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse;
-  const dollarsInFlightServerity = (infectionsByRequestedTimeServerity * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse;
+  const dollarsInFlight = Math.trun((infectionsByRequestedTime * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse);
+  const dollarsInFlightServerity = Math.trun((infectionsByRequestedTimeServerity * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse);
 
   const impact = {
     currentlyInfected,
@@ -57,27 +57,27 @@ const weeklyInfections = (data) => {
   const severelyInfected = data.reportedCases * 50;
 
   // currently infected
-  const infectionsByRequestedTime = currentlyInfected * (2 ** ((data.timeToElapse / 7) / 3));
-  const infectionsByRequestedTimeServerity = severelyInfected * (2 ** ((data.timeToElapse / 7) / 3));
+  const infectionsByRequestedTime = Math.trun(currentlyInfected * (2 ** ((data.timeToElapse / 7) / 3)));
+  const infectionsByRequestedTimeServerity = Math.trun(severelyInfected * (2 ** ((data.timeToElapse / 7) / 3)));
 
   // Servere positive cases
-  const severeCasesByRequestedTime = (15 / 100) * infectionsByRequestedTime;
-  const severeCasesByRequestedTimeSeverity = (15 / 100) * infectionsByRequestedTime;
+  const severeCasesByRequestedTime = Math.trun((15 / 100) * infectionsByRequestedTime);
+  const severeCasesByRequestedTimeSeverity = Math.trun((15 / 100) * infectionsByRequestedTime);
 
   // Number of available beds
-  const hospitalBedsAvailable = (35 / 100) * data.totalHospitalBeds;
+  const hospitalBedsAvailable = Math.trun((35 / 100) * data.totalHospitalBeds);
 
   // Cases requiring ICU
-  const casesForICUByRequestedTime = (5 / 100) * infectionsByRequestedTime;
-  const casesForICUByRequestedTimeSeverity = (5 / 100) * infectionsByRequestedTimeServerity;
+  const casesForICUByRequestedTime = Math.trun((5 / 100) * infectionsByRequestedTime);
+  const casesForICUByRequestedTimeSeverity = Math.trun((5 / 100) * infectionsByRequestedTimeServerity);
 
   // Cases requiring Ventilators
-  const casesForVentilatorsByRequestedTime = (2 / 100) * infectionsByRequestedTime;
-  const casesForVentilatorsByRequestedTimeSeverity = (2 / 100) * infectionsByRequestedTimeServerity;
+  const casesForVentilatorsByRequestedTime = Math.trun((2 / 100) * infectionsByRequestedTime);
+  const casesForVentilatorsByRequestedTimeSeverity = Math.trun((2 / 100) * infectionsByRequestedTimeServerity);
 
   // Money lose in the region
-  const dollarsInFlight = (infectionsByRequestedTime * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse;
-  const dollarsInFlightServerity = (infectionsByRequestedTimeServerity * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse;
+  const dollarsInFlight = Math.trun((infectionsByRequestedTime * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse);
+  const dollarsInFlightServerity = Math.trun((infectionsByRequestedTimeServerity * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse);
 
   const impact = {
     currentlyInfected,
@@ -110,27 +110,27 @@ const monthlyInfections = (data) => {
   const severelyInfected = data.reportedCases * 50;
 
   // currently infected
-  const infectionsByRequestedTime = currentlyInfected * (2 ** ((data.timeToElapse / 30) / 3));
-  const infectionsByRequestedTimeServerity = severelyInfected * (2 ** ((data.timeToElapse / 30) / 3));
+  const infectionsByRequestedTime = Math.trun(currentlyInfected * (2 ** ((data.timeToElapse / 30) / 3)));
+  const infectionsByRequestedTimeServerity = Math.trun(severelyInfected * (2 ** ((data.timeToElapse / 30) / 3)));
 
   // Servere positive cases
-  const severeCasesByRequestedTime = (15 / 100) * infectionsByRequestedTime;
-  const severeCasesByRequestedTimeSeverity = (15 / 100) * infectionsByRequestedTime;
+  const severeCasesByRequestedTime = Math.trun((15 / 100) * infectionsByRequestedTime);
+  const severeCasesByRequestedTimeSeverity = Math.trun((15 / 100) * infectionsByRequestedTime);
 
   // Number of available beds
-  const hospitalBedsAvailable = (35 / 100) * data.totalHospitalBeds;
+  const hospitalBedsAvailable = Math.trun((35 / 100) * data.totalHospitalBeds);
 
   // Cases requiring ICU
-  const casesForICUByRequestedTime = (5 / 100) * infectionsByRequestedTime;
-  const casesForICUByRequestedTimeSeverity = (5 / 100) * infectionsByRequestedTimeServerity;
+  const casesForICUByRequestedTime = Math.trun((5 / 100) * infectionsByRequestedTime);
+  const casesForICUByRequestedTimeSeverity = Math.trun((5 / 100) * infectionsByRequestedTimeServerity);
 
   // Cases requiring Ventilators
-  const casesForVentilatorsByRequestedTime = (2 / 100) * infectionsByRequestedTime;
-  const casesForVentilatorsByRequestedTimeSeverity = (2 / 100) * infectionsByRequestedTimeServerity;
+  const casesForVentilatorsByRequestedTime = Math.trun((2 / 100) * infectionsByRequestedTime);
+  const casesForVentilatorsByRequestedTimeSeverity = Math.trun((2 / 100) * infectionsByRequestedTimeServerity);
 
   // Money lose in the region
-  const dollarsInFlight = (infectionsByRequestedTime * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse;
-  const dollarsInFlightServerity = (infectionsByRequestedTimeServerity * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse;
+  const dollarsInFlight = Math.trun((infectionsByRequestedTime * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse);
+  const dollarsInFlightServerity = Math.trun((infectionsByRequestedTimeServerity * data.region.avgDailyIncomePopulation) * data.region.avgDailyIncomeInUSD * data.timeToElapse);
 
   const impact = {
     currentlyInfected,
