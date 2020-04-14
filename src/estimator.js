@@ -1,16 +1,16 @@
 import {
-  getCurrentlyInfected,
-  getInfectionsByRequestedTime
+  findCurrentlyInfected,
+  findInfectionsByRequestedTime
 } from './Challenge1';
 import {
-  getSevereCasesByRequestedTime,
-  getHospitalBedsByRequestedTime
+  findSevereCasesByRequestedTime,
+  findHospitalBedsByRequestedTime
 } from './Challenge2';
 
 import {
-  getCasesForICUByRequestedTime,
-  getCasesForVentilatorsByRequestedTime,
-  getDollarsInFlight
+  findCasesForICUByRequestedTime,
+  findCasesForVentilatorsByRequestedTime,
+  findDollarsInFlight
 } from './Challenge3';
 
 const covid19ImpactEstimator = (data) => {
@@ -23,28 +23,28 @@ const covid19ImpactEstimator = (data) => {
     totalHospitalBeds
   } = data;
 
-  const currentlyInfected = getCurrentlyInfected(reportedCases);
-  const infectionsByRequestedTime = getInfectionsByRequestedTime(
+  const currentlyInfected = findCurrentlyInfected(reportedCases);
+  const infectionsByRequestedTime = findInfectionsByRequestedTime(
     currentlyInfected,
     periodType,
     timeToElapse
   );
-  const severeCasesByRequestedTime = getSevereCasesByRequestedTime(
+  const severeCasesByRequestedTime = findSevereCasesByRequestedTime(
     infectionsByRequestedTime
   );
-  const hospitalBedsByRequestedTime = getHospitalBedsByRequestedTime(
+  const hospitalBedsByRequestedTime = findHospitalBedsByRequestedTime(
     severeCasesByRequestedTime,
     totalHospitalBeds
   );
-  const casesForICUByRequestedTime = getCasesForICUByRequestedTime(
+  const casesForICUByRequestedTime = findCasesForICUByRequestedTime(
     infectionsByRequestedTime
   );
 
-  const casesForVentilatorsByRequestedTime = getCasesForVentilatorsByRequestedTime(
+  const casesForVentilatorsByRequestedTime = findCasesForVentilatorsByRequestedTime(
     infectionsByRequestedTime
   );
 
-  const dollarsInFlight = getDollarsInFlight(
+  const dollarsInFlight = findDollarsInFlight(
     infectionsByRequestedTime,
     region,
     timeToElapse,

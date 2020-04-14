@@ -1,14 +1,14 @@
-const getCasesForICUByRequestedTime = (infectionsByRequestedTime) => ({
+const findCasesForICUByRequestedTime = (infectionsByRequestedTime) => ({
   impact: Math.trunc(0.05 * infectionsByRequestedTime.impact),
   severeImpact: Math.trunc(0.05 * infectionsByRequestedTime.severeImpact)
 });
 
-const getCasesForVentilatorsByRequestedTime = (infectionsByRequestedTime) => ({
+const findCasesForVentilatorsByRequestedTime = (infectionsByRequestedTime) => ({
   impact: Math.trunc(0.02 * infectionsByRequestedTime.impact),
   severeImpact: Math.trunc(0.02 * infectionsByRequestedTime.severeImpact)
 });
 
-const getDollarsInFlight = (
+const findDollarsInFlight = (
   infectionsByRequestedTime,
   regionalData,
   timeToElapse,
@@ -35,7 +35,7 @@ const getDollarsInFlight = (
 };
 
 export {
-  getCasesForICUByRequestedTime,
-  getCasesForVentilatorsByRequestedTime,
-  getDollarsInFlight
+  findCasesForICUByRequestedTime,
+  findCasesForVentilatorsByRequestedTime,
+  findDollarsInFlight
 };

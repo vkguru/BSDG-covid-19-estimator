@@ -1,9 +1,9 @@
-const getCurrentlyInfected = (reportedCases) => ({
+const findCurrentlyInfected = (reportedCases) => ({
   impact: reportedCases * 10,
   severeImpact: reportedCases * 50
 });
 
-const getInfectionsByRequestedTime = (
+const findInfectionsByRequestedTime = (
   infected,
   periodType,
   timeToElapse
@@ -26,4 +26,4 @@ const getInfectionsByRequestedTime = (
   };
 };
 
-export { getCurrentlyInfected, getInfectionsByRequestedTime };
+export { findCurrentlyInfected, findInfectionsByRequestedTime };
