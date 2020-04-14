@@ -85,3 +85,9 @@ select.form-control:not([size]):not([multiple]) {
   display: flex;
   width: 50%;
 }
+
+@media screen and (max-width:970px) {
+  .data-form {
+    width: 98%;
+  }
+}
