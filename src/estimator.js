@@ -1,17 +1,17 @@
 import {
   findCurrentlyInfected,
   findInfectionsByRequestedTime
-} from './Challenge1';
+} from './FirstChallenge';
 import {
   findSevereCasesByRequestedTime,
   findHospitalBedsByRequestedTime
-} from './Challenge2';
+} from './SecondChallenge';
 
 import {
   findCasesForICUByRequestedTime,
   findCasesForVentilatorsByRequestedTime,
   findDollarsInFlight
-} from './Challenge3';
+} from './ThirdChallenge';
 
 const covid19ImpactEstimator = (data) => {
   const {
